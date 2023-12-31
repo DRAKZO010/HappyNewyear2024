@@ -3,10 +3,10 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #239ac2;
+  background-color: #239ac2; /* New Year's background color */
 }
 
-.birthdayCard {
+.newYearCard {
   position: relative;
   width: 250px;
   height: 350px;
@@ -16,17 +16,17 @@ body {
   transition: 1s;
 }
 
-.birthdayCard:hover {
+.newYearCard:hover {
   transform: perspective(2500px) rotate(5deg);
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
     0 10px 100px rgba(0, 0, 0, 0.5);
 }
 
-.birthdayCard:hover .cardFront {
+.newYearCard:hover .cardFront {
   transform: rotateY(-160deg);
 }
 
-.birthdayCard:hover .happy {
+.newYearCard:hover .happy {
   visibility: hidden;
 }
 
@@ -40,6 +40,10 @@ body {
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
     30px 0 50px rgba(0, 0, 0, 0.4);
   transition: 0.6s;
+  background-image: radial-gradient(circle at 20% 50%, #ffcc00, transparent 15%),
+                    radial-gradient(circle at 50% 20%, #ffcc00, transparent 15%),
+                    radial-gradient(circle at 80% 50%, #ffcc00, transparent 15%);
+  background-size: 10px 10px;
 }
 
 .happy {
@@ -50,83 +54,22 @@ body {
   transition: 0.1s;
 }
 
-.balloons {
+.fireworks {
   position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('fireworks.gif') no-repeat center center; /* Add a fireworks animation */
+  background-size: cover;
+  pointer-events: none;
 }
 
-.balloon-1,
-.balloon-2,
-.balloon-3,
-.balloon-4 {
+.confetti {
   position: absolute;
-  width: 85px;
-  height: 95px;
-  border-radius: 50%;
-}
-
-.balloon-1 {
-  background-color: rgba(255, 40, 90, 0.7);
-  left: -10px;
-  top: 50px;
-}
-
-.balloon-2 {
-  background-color: rgba(9, 215, 160, 0.7);
-  left: 50px;
-  top: 20px;
-}
-
-.balloon-3 {
-  background-color: rgba(255, 186, 26, 0.7);
-  left: 110px;
-  top: 50px;
-}
-
-.balloon-4 {
-  background-color: rgba(12, 122, 159, 0.7);
-  left: 170px;
-  top: 50px;
-}
-
-.balloon-1::before,
-.balloon-2::before,
-.balloon-3::before,
-.balloon-4::before {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 155px;
-  background-color: #ffc848;
-  top: 95px;
-  left: 43px;
-}
-
-.balloon-1::after,
-.balloon-2::after,
-.balloon-3::after,
-.balloon-4::after {
-  content: "";
-  position: absolute;
-  border-right: 7px solid transparent;
-  border-left: 7px solid transparent;
-  top: 94px;
-  left: 37px;
-}
-
-.balloon-1::after {
-  border-bottom: 10px solid #ff3e6b;
-}
-
-.balloon-2::after {
-  border-bottom: 10px solid #04b183;
-}
-
-.balloon-3::after {
-  border-bottom: 10px solid #ffc94c;
-}
-
-.balloon-4::after {
-  border-bottom: 10px solid #13a9bd;
+  width: 100%;
+  height: 100%;
+  background: url('confetti.png') no-repeat center center; /* Add a confetti image */
+  background-size: cover;
+  pointer-events: none;
 }
 
 .cardInside {
@@ -138,6 +81,9 @@ body {
   left: 0;
   top: 0;
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+    background-image: radial-gradient(circle at 20% 50%, #ffcc00, transparent 20%),
+                    radial-gradient(circle at 50% 20%, #ffcc00, transparent 20%),
+                    radial-gradient(circle at 80% 50%, #ffcc00, transparent 2%);
 }
 
 p {
